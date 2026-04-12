@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Academy | Future Starts Here</title>
+    <meta name="description" content="Master AI tools, prompt engineering, and automations at GenAI Academy.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 100 100" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#fff" stroke-width="6"/>
+                    <path d="M 50 20 A 30 30 0 1 0 80 50 H 50 V 65 H 65" fill="none" stroke="#fff" stroke-width="6"/>
+                    <!-- Circuit lines -->
+                    <path d="M 20 50 L 30 50 L 35 40 V 25" fill="none" stroke="#fff" stroke-width="2"/>
+                    <circle cx="35" cy="25" r="3" fill="#fff"/>
+                    <path d="M 50 80 V 70 L 60 70 L 65 75" fill="none" stroke="#fff" stroke-width="2"/>
+                    <circle cx="65" cy="75" r="3" fill="#fff"/>
+                    <path d="M 70 30 L 60 40 H 55" fill="none" stroke="#fff" stroke-width="2"/>
+                    <circle cx="70" cy="30" r="3" fill="#fff"/>
+                </svg>
+                <div class="logo-text">GenAI Academy</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#founders">Founders</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero fade-in-section" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Gen AI Academy</h1>
+            <div class="typewriter-container">
+                <span id="typewriter" class="typewriter"></span><span class="cursor">|</span>
+            </div>
+            <button class="btn btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})">Explore Courses</button>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section class="courses py-16 fade-in-section" id="courses">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <div class="course-grid">
+                <!-- 15 course cards -->
+                <div class="card course-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>AI Image Generation</h3>
+                    <p>Create stunning visuals with Midjourney & DALL·E</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🎬</div>
+                    <h3>AI Video Generation</h3>
+                    <p>Generate cinematic videos with Sora & Runway</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">✍️</div>
+                    <h3>Prompt Engineering</h3>
+                    <p>Master the art of writing powerful AI prompts</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>N8N Automation</h3>
+                    <p>Build no-code workflows to automate your life</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>AI Website Creation</h3>
+                    <p>Build full websites using AI tools in minutes</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">💬</div>
+                    <h3>ChatGPT Mastery</h3>
+                    <p>Use ChatGPT like a pro for any task</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Claude AI</h3>
+                    <p>Work smarter with Anthropic's Claude</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🏢</div>
+                    <h3>AI for Business</h3>
+                    <p>Apply AI tools to grow your business</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🖌️</div>
+                    <h3>Midjourney Advanced</h3>
+                    <p>Advanced techniques for Midjourney image creation</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">✨</div>
+                    <h3>Google Gemini</h3>
+                    <p>Harness Google's most powerful AI model</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">📝</div>
+                    <h3>AI Content Creation</h3>
+                    <p>Create blogs, captions, and scripts with AI</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>AI Tools for Students</h3>
+                    <p>Boost your academic performance with AI</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🎵</div>
+                    <h3>AI Music Generation</h3>
+                    <p>Compose music tracks using Suno and Udio</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">👤</div>
+                    <h3>AI Avatar & Voice</h3>
+                    <p>Create digital avatars and AI voice overs</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+                <div class="card course-card">
+                    <div class="card-icon">🔌</div>
+                    <h3>Make.com Automation</h3>
+                    <p>Connect your apps and automate workflows with Make</p>
+                    <button class="btn-outline">Start Learning</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YOUTUBE SECTION -->
+    <section class="videos py-16 bg-light fade-in-section" id="videos">
+        <div class="container">
+            <h2 class="section-title">Watch & Learn</h2>
+            <div class="video-grid">
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>Introduction to AI Tools</h4>
+                </a>
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>How to Use ChatGPT</h4>
+                </a>
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>AI Image Generation Tutorial</h4>
+                </a>
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>Prompt Engineering Basics</h4>
+                </a>
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>N8N Automation Guide</h4>
+                </a>
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>AI Video Creation with Runway</h4>
+                </a>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" class="btn btn-primary">Visit Our Channel</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDERS SECTION -->
+    <section class="founders py-16 fade-in-section" id="founders">
+        <div class="container founders-container">
+            <h2 class="section-title">Meet the Founders</h2>
+            <div class="founders-grid">
+                <!-- Founder 1 -->
+                <div class="founder-card">
+                    <div class="founder-photo">D</div>
+                    <h3 class="founder-name">Dinil Bhashana</h3>
+                    <div class="founder-role">Co-Founder & AI Educator</div>
+                    <p class="founder-bio">IT undergraduate at ICBT pursuing HND in Software Engineering. Passionate about teaching AI tools to the next generation of tech professionals in Sri Lanka.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/dinil-bhashana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/dinil2" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!-- Founder 2 -->
+                <div class="founder-card">
+                    <div class="founder-photo">R</div>
+                    <h3 class="founder-name">Risith Sasmitha</h3>
+                    <div class="founder-role">Co-Founder & AI Educator</div>
+                    <p class="founder-bio">A passionate AI educator and tech entrepreneur dedicated to making artificial intelligence accessible to everyone in Sri Lanka and beyond.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/risith-sasmitha/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews py-16 bg-light fade-in-section" id="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"GenAI Academy completely changed how I use AI tools. The prompt engineering course was a game changer!"</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Amara Silva</strong>
+                        <span class="reviewer-role">Engineering Student</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The AI image generation course helped me land new clients. Highly recommend to any creative professional."</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Kasun Perera</strong>
+                        <span class="reviewer-role">Freelance Designer</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I automated my entire content workflow using n8n after taking the automation course. Saved me hours every week."</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Nadeesha Fernando</strong>
+                        <span class="reviewer-role">Marketing Executive</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The instructors explain everything from scratch. Perfect for beginners with no prior AI knowledge."</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Tharindu Jayawardena</strong>
+                        <span class="reviewer-role">IT Undergraduate</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"GenAI Academy taught me how to use AI to grow my small business. The results have been incredible."</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Sachini Rathnayaka</strong>
+                        <span class="reviewer-role">Business Owner</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Best AI education platform in Sri Lanka. The content is practical, up to date, and taught by people who truly know their stuff."</p>
+                    <div class="reviewer-info">
+                        <strong class="reviewer-name">Lahiru Bandara</strong>
+                        <span class="reviewer-role">Software Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us py-16 fade-in-section" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why GenAI Academy?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3 class="feature-title">Beginner Friendly</h3>
+                    <p>No prior experience needed. We start from zero.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🇱🇰</div>
+                    <h3 class="feature-title">Made for Sri Lanka</h3>
+                    <p>Courses designed with local context and Sinhala support.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Practical & Hands-On</h3>
+                    <p>Every lesson includes real projects you can use.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🆓</div>
+                    <h3 class="feature-title">Free Resources</h3>
+                    <p>Access free YouTube tutorials and prompt libraries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact py-16 bg-light fade-in-section" id="contact">
+        <div class="container contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                    <div id="formSuccess" class="alert-success">Thank you! We'll get back to you soon.</div>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>genai.academy.lk@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Sri Lanka</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-youtube"></i>
+                        <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank">GenAI Academy YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 100 100" class="logo-svg-footer" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#fff" stroke-width="6"/>
+                        <path d="M 50 20 A 30 30 0 1 0 80 50 H 50 V 65 H 65" fill="none" stroke="#fff" stroke-width="6"/>
+                        <!-- Circuit lines -->
+                        <path d="M 20 50 L 30 50 L 35 40 V 25" fill="none" stroke="#fff" stroke-width="2"/>
+                        <circle cx="35" cy="25" r="3" fill="#fff"/>
+                        <path d="M 50 80 V 70 L 60 70 L 65 75" fill="none" stroke="#fff" stroke-width="2"/>
+                        <circle cx="65" cy="75" r="3" fill="#fff"/>
+                        <path d="M 70 30 L 60 40 H 55" fill="none" stroke="#fff" stroke-width="2"/>
+                        <circle cx="70" cy="30" r="3" fill="#fff"/>
+                    </svg>
+                    <span>GenAI Academy</span>
+                </div>
+                <p class="tagline">Future Starts Here</p>
+            </div>
+            
+            <div class="footer-center">
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#founders">Founders</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-right">
+                <div class="social-links-footer">
+                    <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/dinil-bhashana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 GenAI Academy. Built by <a href="https://www.linkedin.com/in/dinil-bhashana/" target="_blank" style="color:white; text-decoration:underline;">Dinil Bhashana</a> & <a href="https://www.linkedin.com/in/risith-sasmitha/" target="_blank" style="color:white; text-decoration:underline;">Risith Sasmitha</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
