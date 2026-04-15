@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moonIconPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
 
   let isDark = localStorage.getItem("theme") === "dark";
-  
+
   function applyTheme() {
     if (isDark) {
       body.classList.add("dark");
@@ -123,8 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const statTargets = [
-    { id: "stat-students", val: 500 },
-    { id: "stat-courses", val: 15 },
+    { id: "stat-students", val: 100 },
+    { id: "stat-courses", val: 10 },
     { id: "stat-founders", val: 2 }
   ];
 
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function typeWriter() {
     if (!typewriterText) return;
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (!isDeleting) {
       typewriterText.innerText = currentPhrase.substring(0, charIndex + 1);
       charIndex++;
@@ -183,13 +183,56 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if(formSuccess) {
+
+      const nameInput = contactForm.querySelector('input[type="text"]');
+      const emailInput = contactForm.querySelector('input[type="email"]');
+      const messageInput = contactForm.querySelector('textarea');
+
+      const name = nameInput ? nameInput.value : '';
+      const email = emailInput ? emailInput.value : '';
+      const msg = messageInput ? messageInput.value : '';
+
+      const whatsappNumber = "94786296266";
+      const textToSend = `*New Website Message*\n\n*Name:* ${name}\n*Email:* ${email}\n\n*Message:*\n${msg}`;
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textToSend)}`;
+
+      window.open(whatsappUrl, '_blank');
+
+      if (formSuccess) {
         formSuccess.style.display = 'block';
         setTimeout(() => { formSuccess.style.display = 'none'; }, 4000);
       }
       contactForm.reset();
     });
   }
+
+  // --- Auto YouTube Thumbnails ---
+  const videoCards = document.querySelectorAll('.genai-video-card');
+  videoCards.forEach(card => {
+    const url = card.getAttribute('href');
+    if (!url) return;
+
+    let videoId = null;
+    if (url.includes('youtube.com/watch')) {
+      try {
+        const urlObj = new URL(url);
+        videoId = urlObj.searchParams.get('v');
+      } catch (e) { }
+    } else if (url.includes('youtu.be/')) {
+      const parsed = url.split('youtu.be/')[1];
+      videoId = parsed ? parsed.split('?')[0] : null;
+    }
+
+    if (videoId) {
+      const thumbDiv = card.querySelector('.genai-video-thumb');
+      if (thumbDiv) {
+        // hqdefault is highly reliable for all videos, preventing gray placeholder boxes
+        thumbDiv.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/hqdefault.jpg')`;
+        thumbDiv.style.backgroundSize = 'cover';
+        thumbDiv.style.backgroundPosition = 'center';
+      }
+    }
+  });
 
   // --- Dot Canvas ---
   const canvas = document.getElementById("hero-canvas");
@@ -216,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
-    
+
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
@@ -233,13 +276,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let dot of dots) {
         // Handle mouse interaction
         const mdx = dot.x - mouse.x;
         const mdy = dot.y - mouse.y;
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-        
+
         if (mDist < mouseRadius && mDist > 0) {
           const force = (mouseRadius - mDist) / mouseRadius * 0.8;
           dot.x += (mdx / mDist) * force;
