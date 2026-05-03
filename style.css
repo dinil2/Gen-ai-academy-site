@@ -1269,6 +1269,7 @@
 }
 
 .genai-video-flex-container {
+  container-type: size;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -1283,11 +1284,14 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #000;
+  max-height: calc(100vh - 120px); /* Fallback */
 }
 
-.genai-custom-video-wrapper:fullscreen .genai-embedded-video {
-  max-height: calc(100vh - 54px);
-  max-width: calc((100vh - 54px) * 16 / 9);
+@supports (container-type: size) {
+  .genai-embedded-video {
+    max-height: none;
+    max-width: calc(100cqh * 16 / 9);
+  }
 }
 
 /* 133% hack to crop YouTube top/bottom UI */
@@ -1554,8 +1558,9 @@
     margin: 0 0 8px 0 !important;
   }
 
+  /* Make volume slider slightly smaller on mobile to ensure fit */
   #volume-slider {
-    display: none !important;
+    width: 45px !important;
   }
 
   .genai-time-display {
