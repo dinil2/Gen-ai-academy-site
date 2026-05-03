@@ -1262,6 +1262,7 @@
   border-radius: 0;
   border: none;
   justify-content: center;
+  position: relative;
 }
 
 .dark .genai-custom-video-wrapper {
@@ -1292,9 +1293,20 @@
 }
 
 .genai-custom-video-wrapper:fullscreen .genai-embedded-video {
-  /* In fullscreen, we can take up 100vh minus the control bar (approx 100px for wrapped mobile controls) */
-  max-height: calc(100vh - 100px);
-  max-width: calc((100vh - 100px) * 16 / 9);
+  max-height: 100vh;
+  max-width: calc(100vh * 16 / 9);
+}
+
+.genai-custom-video-wrapper:fullscreen .genai-custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  z-index: 100;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
 }
 
 /* 133% hack to crop YouTube top/bottom UI */
@@ -1689,6 +1701,29 @@
     width: 10px;
     height: 10px;
     border-width: 2px;
+  }
+}
+
+@media (max-width: 950px) and (orientation: landscape) {
+  .genai-custom-controls {
+    flex-wrap: nowrap;
+    padding: 10px 24px;
+    /* Account for safe area insets on modern phones with notches */
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  #progress-bar {
+    order: 0;
+    flex-basis: auto;
+    flex-grow: 1;
+    margin: 0 16px !important;
+  }
+
+  .genai-time-display {
+    flex-grow: 0;
+    text-align: right;
   }
 }
 
