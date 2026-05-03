@@ -42,12 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Announcement Bar ---
   const announcementBar = document.getElementById("announcement-bar");
   const closeAnnouncement = document.getElementById("close-announcement");
-  let hasAnnouncement = true;
+  let hasAnnouncement = localStorage.getItem("announcementClosed") !== "true";
+
+  if (announcementBar && !hasAnnouncement) {
+    announcementBar.style.display = "none";
+  }
 
   if (closeAnnouncement && announcementBar) {
     closeAnnouncement.addEventListener("click", () => {
       announcementBar.style.display = "none";
       hasAnnouncement = false;
+      localStorage.setItem("announcementClosed", "true");
       updateNavTop();
     });
   }
@@ -69,6 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     if (window.scrollY > 10) navbar.classList.add("scrolled");
     else navbar.classList.remove("scrolled");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640 && menuOpen && mobileMenu) {
+      menuOpen = false;
+      mobileMenu.classList.remove("open");
+    }
   });
 
   if (hamburger && mobileMenu) {
@@ -148,9 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let typingSpeed = 80;
-  let deletingSpeed = 40;
-  let pauseTime = 1500;
+  let typingSpeed = 50;
+  let deletingSpeed = 25;
+  let pauseTime = 2000;
 
   function typeWriter() {
     if (!typewriterText) return;
@@ -226,8 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (videoId) {
       const thumbDiv = card.querySelector('.genai-video-thumb');
       if (thumbDiv) {
-        // hqdefault is highly reliable for all videos, preventing gray placeholder boxes
-        thumbDiv.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/hqdefault.jpg')`;
+        // 0.jpg is the most reliable fallback for all videos
+        thumbDiv.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/0.jpg')`;
         thumbDiv.style.backgroundSize = 'cover';
         thumbDiv.style.backgroundPosition = 'center';
       }
