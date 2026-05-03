@@ -1541,6 +1541,35 @@
     margin-top: 28px;
   }
 
+  /* Custom Video Player Mobile */
+  .genai-custom-controls {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  #progress-bar {
+    order: -1;
+    flex-basis: 100%;
+    margin: 0 0 8px 0 !important;
+  }
+
+  #volume-slider {
+    display: none !important;
+  }
+
+  .genai-time-display {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 8px;
+    font-size: 0.8rem;
+  }
+
+  .genai-control-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
   /* Founders mobile */
   .genai-founders-grid {
     flex-direction: column;
