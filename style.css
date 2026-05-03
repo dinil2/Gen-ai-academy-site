@@ -1269,7 +1269,6 @@
 }
 
 .genai-video-flex-container {
-  container-type: size;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -1284,14 +1283,18 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #000;
-  max-height: calc(100vh - 120px); /* Fallback */
+  
+  /* Ensure the video never exceeds 75% of the screen height in normal mode */
+  max-height: 75vh;
+  /* Constrain the width proportionally so aspect-ratio stays exact */
+  max-width: calc(75vh * 16 / 9);
+  margin: 0 auto;
 }
 
-@supports (container-type: size) {
-  .genai-embedded-video {
-    max-height: none;
-    max-width: calc(100cqh * 16 / 9);
-  }
+.genai-custom-video-wrapper:fullscreen .genai-embedded-video {
+  /* In fullscreen, we can take up 100vh minus the control bar (approx 100px for wrapped mobile controls) */
+  max-height: calc(100vh - 100px);
+  max-width: calc((100vh - 100px) * 16 / 9);
 }
 
 /* 133% hack to crop YouTube top/bottom UI */
