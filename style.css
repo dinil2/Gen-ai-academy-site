@@ -1111,6 +1111,8 @@
 
 .genai-mobile-menu.open {
   display: block;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 .genai-mobile-menu a {
@@ -1126,6 +1128,288 @@
 .dark .genai-mobile-menu a {
   color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Syllabus Page Styles */
+.genai-syllabus-hero {
+  padding: 160px 24px 80px;
+  background: #fff;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.dark .genai-syllabus-hero {
+  background: #000;
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.genai-syllabus-hero p {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  margin-top: 16px;
+}
+
+.genai-syllabus-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.genai-week-block {
+  margin-bottom: 60px;
+  padding-left: 24px;
+  border-left: 2px solid rgba(0,0,0,0.15);
+}
+
+.dark .genai-week-block {
+  border-left-color: rgba(255,255,255,0.15);
+}
+
+.genai-week-title {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.genai-week-title::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+
+.dark .genai-week-title::before {
+  background: #000;
+  border-color: #fff;
+}
+
+.genai-days-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.genai-day-card {
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark .genai-day-card {
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+}
+
+.genai-day-card:hover {
+  transform: translateX(8px);
+  border-color: #000;
+  box-shadow: 4px 4px 0px #000;
+}
+
+.dark .genai-day-card:hover {
+  border-color: #fff;
+  box-shadow: 4px 4px 0px #fff;
+}
+
+.genai-day-badge {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.dark .genai-day-badge {
+  background: #fff;
+  color: #000;
+}
+
+.genai-day-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.genai-day-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.genai-custom-video-wrapper {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.genai-custom-video-wrapper:fullscreen {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  justify-content: center;
+  position: relative;
+}
+
+.dark .genai-custom-video-wrapper {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.genai-video-flex-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+}
+
+.genai-embedded-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  
+  /* Ensure the video never exceeds 75% of the screen height in normal mode */
+  max-height: 75vh;
+  /* Constrain the width proportionally so aspect-ratio stays exact */
+  max-width: calc(75vh * 16 / 9);
+  margin: 0 auto;
+}
+
+.genai-custom-video-wrapper:fullscreen .genai-embedded-video {
+  max-height: 100vh;
+  max-width: calc(100vh * 16 / 9);
+}
+
+.genai-custom-video-wrapper:fullscreen .genai-custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  z-index: 100;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* 133% hack to crop YouTube top/bottom UI */
+.genai-embedded-video iframe {
+  position: absolute;
+  top: -16.66%;
+  left: 0;
+  width: 100%;
+  height: 133.33%;
+  border: 0;
+  pointer-events: none; /* Let the API handle everything */
+}
+
+.genai-custom-controls {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #111;
+  color: #fff;
+  gap: 16px;
+}
+
+.genai-control-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.genai-control-btn:hover {
+  opacity: 1;
+}
+
+.genai-control-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.genai-time-display {
+  font-size: 0.9rem;
+  font-family: monospace;
+  opacity: 0.8;
+}
+
+.genai-range-slider {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.genai-range-slider:focus {
+  outline: none;
+}
+
+.genai-range-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.genai-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #fff;
+  margin-top: -4px;
+  transition: transform 0.1s;
+}
+
+.genai-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+.genai-range-slider::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.genai-range-slider::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  transition: transform 0.1s;
+}
+
+.genai-range-slider::-moz-range-thumb:hover {
+  transform: scale(1.3);
 }
 
 /* Responsive */
@@ -1276,6 +1560,36 @@
     margin-top: 28px;
   }
 
+  /* Custom Video Player Mobile */
+  .genai-custom-controls {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  #progress-bar {
+    order: -1;
+    flex-basis: 100%;
+    margin: 0 0 8px 0 !important;
+  }
+
+  /* Make volume slider slightly smaller on mobile to ensure fit */
+  #volume-slider {
+    width: 45px !important;
+  }
+
+  .genai-time-display {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 8px;
+    font-size: 0.8rem;
+  }
+
+  .genai-control-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
   /* Founders mobile */
   .genai-founders-grid {
     flex-direction: column;
@@ -1370,6 +1684,46 @@
 
   .genai-stat-value {
     font-size: 26px;
+  }
+
+  /* Syllabus */
+  .genai-syllabus-hero {
+    padding: 120px 16px 60px;
+  }
+
+  .genai-week-block {
+    padding-left: 16px;
+    border-left-width: 1px;
+  }
+  
+  .genai-week-title::before {
+    left: -22px;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 950px) and (orientation: landscape) {
+  .genai-custom-controls {
+    flex-wrap: nowrap;
+    padding: 10px 24px;
+    /* Account for safe area insets on modern phones with notches */
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  #progress-bar {
+    order: 0;
+    flex-basis: auto;
+    flex-grow: 1;
+    margin: 0 16px !important;
+  }
+
+  .genai-time-display {
+    flex-grow: 0;
+    text-align: right;
   }
 }
 
